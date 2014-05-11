@@ -55,19 +55,20 @@
 				#{projectMB.projectRepository.findById(bug.project.id).descricao}
 			</p:column>
 			
-			<p:column style="width:4%">
+			<p:column style="width:2%">
 				<f:facet name="header">Alterar</f:facet>
 				<p:commandButton action="#{bugMB.preparedEdit(bug.id)}" icon="ui-icone-pencil" title="Alterar Bug" update="@all"/>
 			</p:column>
-			<p:column style="width:4%">
+			<p:column style="width:2%">
 				<f:facet name="header">Excluir</f:facet>
 				<p:commandButton action="#{bugMB.delete(bug.id)}" icon="ui-icone-trash" title="Excluir Bug" update="@all"/>
 			</p:column>
+			<ui:remove>
 			<p:column style="width:4%">
 				<f:facet name="header">Excluir</f:facet>
 				<h:commandLink action="#{bugMB.delete(bug.id)}">delete</h:commandLink>
 			</p:column>
-			
+			</ui:remove>
 		</p:dataTable>
 	</h:form>
 </h:body>
